@@ -1,0 +1,70 @@
+# Heat exposure-response curve for the USHMA Mortality Risk Index.
+#
+# WHY THIS IS TRANSFERRED, NOT FITTED
+#   The supplied mortality data (AHS, 2007-2011) and the supplied weather data
+#   (NASA POWER, 2015-2025) share no days. A local exposure-response curve cannot
+#   be estimated from them. This file therefore carries a curve whose shape and
+#   magnitude are chosen to sit inside the ranges reported by the heat-mortality
+#   literature for hot, humid South and South-East Asian settings. It is the ONLY
+#   transferred component of the risk model; baseline mortality, population and
+#   vulnerability are all estimated locally.
+#
+#   When a paired weather-mortality series exists, ushma.health.dlnm.fit_local()
+#   estimates these parameters directly and this file is replaced.
+#
+# FORM
+#   Exposure is HTSI (0-100), which is already anchored to local climatology, so
+#   the curve transfers between climates on a relative rather than absolute scale.
+#
+#     log RR(h)  = beta * max(h - threshold, 0)
+#     log RR_eff(t) = sum_l  lag_weight[l] * log RR(h[t - l])          (l = 0..3)
+#     ward:  log RR_ward = vulnerability_multiplier * log RR_eff
+#
+#   beta is defined by the RR reached at a reference HTSI, not set directly, so
+#   the number that matters -- "how much does mortality rise on a 1-in-100
+#   summer day" -- is the one written down.
+
+version: 1
+
+exposure: htsi
+
+threshold:
+  value: 48.5
+  note: >
+    The HTSI Watch edge, ~90th percentile of March-June days across Odisha.
+    Heat-mortality curves in tropical settings typically begin to rise between
+    the local 75th and 90th percentile of temperature; the upper end is used so
+    the model does not attribute deaths to ordinary summer days.
+
+reference_point:
+  htsi: 63.6
+  note: 99th percentile of March-June HTSI across the 234 in-state cells, 2015-2025.
+
+relative_risk_at_reference:
+  central: 1.20
+  low: 1.10
+  high: 1.35
+  note: >
+    All-cause relative risk at the 99th percentile versus the minimum-mortality
+    point. Multi-country analyses report roughly 1.1-1.3 for hot and humid
+    cities (Gasparrini et al. 2015, The Lancet 386:369-375). Single extreme
+    events in India have run higher -- Ahmedabad's May 2010 heatwave saw
+    all-cause mortality rise by roughly 43% (Azhar et al. 2014, PLoS ONE
+    9:e91831) -- so the high bound is set above the multi-city range. These
+    values were chosen within the reported ranges; they are not copied from a
+    single published table.
+
+lag_weights:
+  values: [0.50, 0.25, 0.15, 0.10]
+  note: >
+    Share of the cumulative effect at lags 0-3 days. Heat effects on mortality
+    are acute and concentrated within ~3 days in the literature; longer lags
+    add little and invite mortality-displacement ("harvesting") artefacts.
+
+max_relative_risk:
+  value: 1.8
+  note: Cap applied before vulnerability modification, to keep extrapolation bounded.
+
+mri_reference_excess:
+  value: 0.5
+  note: MRI reaches 100 when a ward's relative risk reaches 1.5 (50% excess).

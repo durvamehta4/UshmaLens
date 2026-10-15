@@ -1,0 +1,11 @@
+{
+  "name": "UshmaLens Field",
+  "short_name": "UshmaLens",
+  "description": "Today's heat risk and actions for your ward, offline-capable.",
+  "start_url": "/field",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f9f9f7",
+  "theme_color": "#b8321f",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

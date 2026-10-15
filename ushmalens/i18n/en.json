@@ -1,0 +1,158 @@
+{
+ "_meta": {
+  "language": "English",
+  "code": "en",
+  "review": "source text"
+ },
+ "levels": {
+  "Normal": "Normal",
+  "Watch": "Heat Watch",
+  "Warning": "Heat Warning",
+  "Emergency": "Heat Emergency"
+ },
+ "days": {
+  "today": "today",
+  "tomorrow": "tomorrow",
+  "onDate": "on {date}"
+ },
+ "sms": {
+  "Watch": "UshmaLens Heat Watch, {place}: heat stress expected to rise {day}. Drink water often, avoid the sun 12-4 pm, check on elderly neighbours.",
+  "Warning": "UshmaLens HEAT WARNING, {place} {day}: dangerous heat (HTSI {htsi}). Stay indoors 11 am-4 pm, drink water every 30 min, take ORS if sweating heavily. Emergency: 108",
+  "Emergency": "UshmaLens HEAT EMERGENCY, {place} {day}: life-threatening heat. Stay in shade or a cool room, never leave children or elderly alone, go to a cooling centre. Heatstroke signs: call 108 now."
+ },
+ "headline": {
+  "Watch": "Heat Watch for {place}",
+  "Warning": "Heat Warning for {place}",
+  "Emergency": "Heat Emergency for {place}"
+ },
+ "description": "Human Thermal Stress Index {htsi} ({level}) expected {day} in {place}. Peak WBGT {wbgt} degC; overnight WBGT {night} degC. Estimated excess deaths across the area {excess} (range {excessLow}-{excessHigh}).",
+ "audiences": {
+  "public": {
+   "label": "General public",
+   "Watch": [
+    "Drink water regularly even if not thirsty",
+    "Avoid direct sun between 12 and 4 pm",
+    "Check on elderly neighbours once a day"
+   ],
+   "Warning": [
+    "Stay indoors from 11 am to 4 pm",
+    "Drink water every 30 minutes; use ORS if sweating heavily",
+    "Wear light, loose cotton and cover your head outdoors"
+   ],
+   "Emergency": [
+    "Go to a cooling centre or the coolest room available",
+    "Never leave children, elderly or pets in parked vehicles",
+    "Confusion, hot dry skin or fainting is heatstroke: call 108 immediately"
+   ]
+  },
+  "elderly": {
+   "label": "Elderly and chronically ill",
+   "Watch": [
+    "Keep medicines out of the heat and take them on time",
+    "Keep a fan running and a window open for cross-ventilation",
+    "Ask someone to check on you daily"
+   ],
+   "Warning": [
+    "Do not go out between 11 am and 4 pm",
+    "Sip water through the day; ask your doctor if you are on a fluid limit",
+    "Sponge with cool water if you feel dizzy or weak"
+   ],
+   "Emergency": [
+    "Move to a cooling centre or the coolest place in the house",
+    "Keep a phone within reach and someone informed",
+    "Call 108 at the first sign of confusion or fainting"
+   ]
+  },
+  "outdoor_workers": {
+   "label": "Outdoor workers",
+   "Watch": [
+    "Drink a glass of water every 20 minutes at work",
+    "Take shaded breaks every hour",
+    "Watch co-workers for cramps and dizziness"
+   ],
+   "Warning": [
+    "Shift heavy work to before 11 am or after 4 pm",
+    "Rest 15 minutes in shade every hour",
+    "Stop work and cool down at any sign of dizziness or nausea"
+   ],
+   "Emergency": [
+    "No heavy outdoor work between 11 am and 4 pm",
+    "Employers must provide shade, water and ORS on site",
+    "A collapsed worker needs cooling and 108 immediately"
+   ]
+  },
+  "schools": {
+   "label": "Schools",
+   "Watch": [
+    "Move outdoor assembly and games indoors",
+    "Ensure drinking water is available in every classroom",
+    "Remind parents to send water bottles"
+   ],
+   "Warning": [
+    "End classes before 11 am or move to morning shift",
+    "Cancel outdoor activity entirely",
+    "Keep ORS packets and a cool rest room ready"
+   ],
+   "Emergency": [
+    "Close schools or hold classes online",
+    "Do not hold examinations in unventilated halls",
+    "Coordinate with the district administration on closure"
+   ]
+  },
+  "hospitals": {
+   "label": "Hospitals and PHCs",
+   "Watch": [
+    "Stock ORS, IV fluids and ice packs",
+    "Brief emergency staff on heatstroke triage",
+    "Check that cold rooms and fans work"
+   ],
+   "Warning": [
+    "Activate heat-illness triage in emergency departments",
+    "Prepare cooling beds (ice, fans, wet sheets)",
+    "Expect a surge of {ed} additional emergency visits across the area"
+   ],
+   "Emergency": [
+    "Declare heat surge protocol; cancel non-urgent procedures",
+    "Deploy mobile medical units to hotspots",
+    "Report heat-related deaths and admissions daily to the district"
+   ]
+  },
+  "power_utility": {
+   "label": "Power utility",
+   "Watch": [
+    "Review peak-load forecast for the coming days",
+    "Defer planned maintenance in affected feeders"
+   ],
+   "Warning": [
+    "Prepare for evening peak demand from fans and coolers",
+    "Prioritise uninterrupted supply to hospitals and cooling centres"
+   ],
+   "Emergency": [
+    "Suspend load-shedding in affected wards",
+    "Keep rapid-response crews on standby for transformer failures"
+   ]
+  },
+  "municipal": {
+   "label": "Municipal administration",
+   "Watch": [
+    "Alert ward officers and ASHA workers",
+    "Check water kiosks and public taps",
+    "Pre-position ORS at health centres"
+   ],
+   "Warning": [
+    "Open cooling centres in priority wards",
+    "Run water tankers to slums and markets",
+    "Issue advisories to construction sites to shift working hours"
+   ],
+   "Emergency": [
+    "Open all cooling centres, extend hours into the night",
+    "Enforce the 11 am-4 pm outdoor work restriction",
+    "Deploy door-to-door checks on elderly people living alone"
+   ]
+  }
+ },
+ "emergency": {
+  "signs": "Heatstroke signs: very high fever, confusion, no sweating. Do not wait - call now.",
+  "call": "Emergency: call 112 (police/fire/ambulance) or 108 (ambulance)."
+ }
+}
